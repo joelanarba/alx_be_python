@@ -7,22 +7,19 @@ priority = input("Priority (high/medium/low): ").lower()
 # Prompt for time sensitivity
 time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-# Match Case to process priority levels
+# Match Case for priority
 match priority:
     case "high":
-        message = f"Reminder: '{task}' is a high priority task"
+        priority_label = "high priority"
     case "medium":
-        message = f"Reminder: '{task}' is a medium priority task"
+        priority_label = "medium priority"
     case "low":
-        message = f"Note: '{task}' is a low priority task"
+        priority_label = "low priority"
     case _:
-        message = f"'{task}' has an unknown priority level"
+        priority_label = "unknown priority"
 
-# Append time sensitivity info
+# Form reminder based on time sensitivity
 if time_bound == "yes":
-    message += " that requires immediate attention today!"
+    print(f"Reminder: '{task}' is a {priority_label} task that requires immediate attention today!")
 else:
-    message += ". Consider completing it when you have free time."
-
-# Print final reminder
-print("\n" + message)
+    print(f"Note: '{task}' is a {priority_label} task. Consider completing it when you have free time.")
