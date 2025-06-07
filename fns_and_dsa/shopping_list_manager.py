@@ -10,19 +10,19 @@ def main():
 
     while True:
         display_menu()
-        choice = int(input("Enter your choice: "))  # ✅ EXACTLY like this
+        choice = int(input("Enter your choice: "))  # MUST use int()
 
         if choice == 1:
-            item = input("Enter item to add: ")
+            item = input("Enter the item to add: ")  # ✅ Exact wording
             shopping_list.append(item)
-            print(f"{item} added to shopping list.")
+            print(f"{item} added to the shopping list.")
         elif choice == 2:
-            item = input("Enter item to remove: ")
+            item = input("Enter the item to remove: ")  # Consistent style
             if item in shopping_list:
                 shopping_list.remove(item)
-                print(f"{item} removed from shopping list.")
+                print(f"{item} removed from the shopping list.")
             else:
-                print(f"{item} not found in shopping list.")
+                print(f"{item} not found in the shopping list.")
         elif choice == 3:
             print("Current Shopping List:")
             if not shopping_list:
